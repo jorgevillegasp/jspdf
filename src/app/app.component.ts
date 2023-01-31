@@ -96,7 +96,7 @@ export class AppComponent {
         'FAST'
       );
 
-      this.almacenamosElPDFenUnJson(img);
+      this.almacenamosElPDFenUnJson(img,DATA.innerHTML);
       
       return pdf;
       
@@ -110,18 +110,20 @@ export class AppComponent {
     
   }
 
-  almacenamosElPDFenUnJson(img:any){
+  almacenamosElPDFenUnJson(img:any, data:any){
     let objetoJSON = {
-      pdf: img,
+      pdfImg: img,
+      html: data
     };
+    console.log(objetoJSON);
 
-    this.decodificarUnBase64(objetoJSON);
+    //this.decodificarUnBase64(objetoJSON);
   }
 
 
   decodificarUnBase64(Json:any){
 
-    const img = Json.pdf;
+    const img = Json.pdfImg;
 
     const pdf = new jsPDF('p', 'pt', 'a4');
     // Add image Canvas to PDF
@@ -150,3 +152,5 @@ export class AppComponent {
 
 
 }
+
+

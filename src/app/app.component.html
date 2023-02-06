@@ -1,3 +1,7 @@
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 <div class="container">
   <div class="">
     <div class="border my-3">
@@ -10,16 +14,6 @@
 
         <!-- CUERPO -->
 
-        <app-body></app-body>
-        <app-body></app-body>
-        <app-body></app-body>
-        <app-body></app-body>
-        <app-body></app-body>
-        <app-body></app-body>
-        <app-body></app-body>
-        <app-body></app-body>
-        <app-body></app-body>
-        <app-body></app-body>
         <app-body></app-body>
         <form>
           <div class="mb-3">
@@ -53,8 +47,6 @@
             </tr>
           </table>
         </div>
-
-
         <!-- PIE DE PAGINA -->
 
         <div id="footer">
@@ -67,5 +59,10 @@
   <br>
   <div class="row">
     <button class="btn col col-lg-2 btn-danger btn-block ml-4" (click)="descargarPDF()">Descargar PDF</button>
+    <button class="btn col col-lg-2 btn-info btn-block ml-4" (click)="MostrarData()">Descargar PDF</button>
+  </div>
+  
+  <div *ngIf="mostrarData && base64" class="animate__animated animate__backInUp">
+    <img [src]="base64" class="w-100 h-50"  alt="data">
   </div>
 </div>

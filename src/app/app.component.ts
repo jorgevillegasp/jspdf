@@ -96,6 +96,8 @@ export class AppComponent {
         'FAST'
       );
 
+       this.base64 = img;
+
       this.almacenamosElPDFenUnJson(img,DATA.innerHTML);
       
       return pdf;
@@ -103,7 +105,7 @@ export class AppComponent {
     }).then((docResult) => {
       //this.convertiloEnBase64(docResult);
       /** Nombre del documento que se descargara */
-      docResult.save(`${ this.title +"_" + new Date().toISOString()}.pdf`);
+      //docResult.save(`${ this.title +"_" + new Date().toISOString()}.pdf`);
       
     });
 
@@ -148,6 +150,12 @@ export class AppComponent {
       'FAST'
     );
       pdf.save("download.pdf"); 
+  }
+
+  mostrarData:boolean= false;
+  MostrarData(){
+    this.mostrarData= true;
+
   }
 
 
